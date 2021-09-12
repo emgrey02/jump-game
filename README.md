@@ -1,4 +1,5 @@
 # Jump Game
+a simple jumping game, playable through a browser
 ## Demo
 ![jump game demo](/jump-game.gif)
 ## Live Preview
