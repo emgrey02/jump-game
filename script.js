@@ -72,5 +72,3 @@ let setLevel = (e) => {
 }
 
 levels.forEach(button=> button.addEventListener('click', setLevel));
-
-/* directions.innerHTML = 'Jump by click, touch, or spacebar'; */
