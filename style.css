@@ -4,17 +4,60 @@
   padding: 0;
   margin: 0;
 }
+
 body {
+  font-family: "Inconsolata", serif;
+  font-size: 1em;
   padding: 0;
   margin: 0;
+}
+
+h1 {
+  font-family: "Merriweather", sans-serf;
+  text-align: center;
+  padding: 50px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background-color: black;
+  color: white;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+#levels {
+  display: flex;
+  justify-content: center;
+}
+
+#levels button {
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+  color: darkgray;
 }
 
 #game {
   width: 500px;
   height: 200px;
-  border: 2px solid black;
   border-radius: 0.5em;
-  margin: 100px auto;
+  margin: 100px auto 50px;
 }
 
 .player {
@@ -24,7 +67,7 @@ body {
   left: 20px;
   height: 80px;
   background-color: purple;
-  border-radius: 0.5em;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
 .block {
@@ -33,10 +76,21 @@ body {
   left: 460px;
   width: 40px;
   height: 40px;
-  background-color: pink;
+  background-color: rgb(192, 192, 34);
+  clip-path: polygon(50% 0%, 100% 0%, 50% 50%, 100% 100%, 50% 100%, 0% 50%);
   border-radius: 0.5em;
-  animation: block 0.9s linear;
-  animation-iteration-count: infinite;
+}
+
+.level-one {
+  animation: block 1.3s linear infinite;
+}
+
+.level-two {
+  animation: block 1.1s linear infinite;
+}
+
+.level-three {
+  animation: block 0.9s linear infinite;
 }
 
 @keyframes block {
@@ -44,7 +98,7 @@ body {
     left: 460px;
   }
   100% {
-    left: 0px;
+    left: -40px;
   }
 }
 
@@ -52,7 +106,7 @@ body {
   0% {
     top: 120px;
   }
-  30% {
+  40% {
     top: 60px;
   }
   70% {
@@ -64,27 +118,22 @@ body {
 }
 
 .animation {
-  animation: jump 400ms ease;
+  animation: jump 500ms linear;
+}
+
+.directions {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
 }
 
 .restart {
   position: relative;
   display: block;
   margin: auto;
-  padding: 20px;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 0.5em;
+  padding: 10px 20px;
   font-size: 20px;
-  cursor: pointer;
-}
-
-.restart:hover,
-.restart:focus {
-  background-color: black;
-  color: white;
-}
-
-.restart:active {
-  transform: translateY(3px);
 }
