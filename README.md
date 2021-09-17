@@ -1,5 +1,5 @@
 # Jump Game
-a simple jumping game, playable through a browser
+a simple game where the user must jump over the oncoming obstacle, or else it's game over. With each level, the speed of the obstacle increases. 
 ## Demo
 ![jump game demo](/jump-game.gif)
 ## Live Preview
